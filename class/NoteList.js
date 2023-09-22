@@ -68,7 +68,6 @@ export class NoteList {
         }
       });
     }
-    console.log(this.list);
     return parent;
   }
 }

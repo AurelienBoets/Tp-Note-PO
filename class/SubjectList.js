@@ -17,13 +17,12 @@ export class SubjectList {
   }
 
   search(id) {
-    let subject;
+    let subject = "";
     this.list.forEach((element) => {
       if (element.id == id) {
         subject = element.name;
       }
-      console.log(subject);
-      return subject;
     });
+    return subject;
   }
 }

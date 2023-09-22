@@ -94,7 +94,6 @@ export class Document {
     let noteSubject = document.getElementById("noteSubject");
     let chooseSubject = document.getElementById("chooseSubject");
     let table = document.querySelector("table");
-
     btnStudent.addEventListener("click", () => {
       if (addFirstName != "" && addLastName != "") {
         studentList.add(addFirstName.value, addLastName.value);
@@ -127,7 +126,6 @@ export class Document {
       ) {
         let student = studentList.search(noteStudent.value);
         let subject = subjectList.search(noteSubject.value);
-
         noteList.add(
           noteStudent.value,
           student.firstName,
@@ -142,26 +140,24 @@ export class Document {
       }
     });
 
-    chooseStudent.addEventListener("change", () => {
-      if (!document.querySelector("tbody")) {
-      } else {
-        let tbody = document.querySelector("tbody");
-        table.remove(tbody);
+    chooseStudent.onchange = () => {
+      let tbody = document.querySelector("tbody");
+      if (tbody != undefined) {
+        table.removeChild(tbody);
       }
       table.appendChild(
         noteList.filter(chooseStudent.value, chooseSubject.value)
       );
-    });
+    };
 
-    chooseSubject.addEventListener("change", () => {
-      if (!document.querySelector("tbody")) {
-      } else {
-        let tbody = document.querySelector("tbody");
-        table.remove(tbody);
+    chooseSubject.onchange = () => {
+      let tbody = document.querySelector("tbody");
+      if (tbody != undefined) {
+        table.removeChild(tbody);
       }
       table.appendChild(
         noteList.filter(chooseStudent.value, chooseSubject.value)
       );
-    });
+    };
   }
 }

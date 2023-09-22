@@ -21,7 +21,7 @@ export class StudentList {
       lastName: "",
     };
     this.list.forEach((element) => {
-      if ((element.id = id)) {
+      if (element.id == id) {
         student.firstName = element.firstName;
         student.lastName = element.lastName;
       }

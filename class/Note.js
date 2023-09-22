@@ -7,7 +7,7 @@ export class Note {
     subjectName,
     note
   ) {
-    this.stustudentId = studentId;
+    this.studentId = studentId;
     this.subjectId = subjectId;
     this.note = note;
     this.studentFirstName = studentFirstName;
