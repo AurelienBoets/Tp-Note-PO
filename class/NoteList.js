@@ -31,7 +31,7 @@ export class NoteList {
         <td>${note.studentLastName}</td>
         <td>${note.subjectName}</td>
         <td>${note.note}</td>`;
-        child.innerHTML = render;
+        child.innerHTML += render;
         parent.appendChild(child);
       });
     } else if (studentId === "all") {
@@ -41,7 +41,7 @@ export class NoteList {
         <td>${note.studentLastName}</td>
         <td>${note.subjectName}</td>
         <td>${note.note}</td>`;
-          child.innerHTML = render;
+          child.innerHTML += render;
           parent.appendChild(child);
         }
       });
@@ -52,7 +52,7 @@ export class NoteList {
         <td>${note.studentLastName}</td>
         <td>${note.subjectName}</td>
         <td>${note.note}</td>`;
-          child.innerHTML = render;
+          child.innerHTML += render;
           parent.appendChild(child);
         }
       });
@@ -63,11 +63,13 @@ export class NoteList {
         <td>${note.studentLastName}</td>
         <td>${note.subjectName}</td>
         <td>${note.note}</td>`;
-          child.innerHTML = render;
+          child.innerHTML += render;
           parent.appendChild(child);
         }
+        console.log(parent);
       });
     }
+    console.log(this.list);
     return parent;
   }
 }
